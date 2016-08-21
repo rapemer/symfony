@@ -540,6 +540,26 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     /**
      * {@inheritdoc}
      */
+    public function replaceOption($name, $value, $create = false)
+    {
+        if ($this->hasOption($name)) {
+            $this->options[$name] = $value;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeOption($name)
+    {
+        if ($this->hasOption($name)) {
+            unset($this->options[$name]);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function setAttribute($name, $value)
     {
         if ($this->locked) {

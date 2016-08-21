@@ -243,4 +243,19 @@ interface FormConfigInterface
      * @return mixed The option value
      */
     public function getOption($name, $default = null);
+
+    /**
+     * Replace the value of a specific option only if already exists
+     *
+     * @param string $name   The option name
+     * @param mixed  $value  Replace old option with new value
+     */
+    public function replaceOption($name, $value);
+
+    /**
+     * Remove the specific option only if exists
+     *
+     * @param string $name
+     */
+    public function removeOption($name);
 }
